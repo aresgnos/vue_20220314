@@ -1,26 +1,34 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <el-menu
+    class="el-menu-demo"
+    mode="horizontal"
+    >
+    <el-menu-item index="1" @click="handleMenu('home')">Home</el-menu-item>
+    <el-menu-item index="2" @click="handleMenu('login')">Login</el-menu-item>
+    <el-menu-item index="3" @click="handleMenu('join')">Join</el-menu-item>
+    <el-menu-item index="4" @click="handleMenu('mypage')">Mypage</el-menu-item>
+    </el-menu>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { useRouter } from 'vue-router';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  setup () {
+    const router = useRouter();
+    const handleMenu = (menu) => {
+      router.push(menu);
+    }
+    
+
+    return {handleMenu}
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss" scoped>
+
 </style>
