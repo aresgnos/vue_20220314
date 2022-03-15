@@ -3,11 +3,20 @@
 module.exports = {
     devServer:{
         proxy : {
-            '/member' : {
+            // socket.io, websocket => 문자나 파일을 통신
+            // webrtc => 실시간 화상채팅
+            
+            '/socket' : {  
+                target:'http://localhost:3001',
+                ws:true,
+                changeOrigin :true,
+                logLevel : 'debug'
+            },
+            '/member' : { // rest용
                 target:'http://localhost:3000',
                 changeOrigin :true,
                 logLevel : 'debug'
             },
         },
-    }
+    },
 }

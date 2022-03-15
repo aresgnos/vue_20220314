@@ -2,7 +2,7 @@
     <div style="padding:50px;">
         <h3>Join</h3>
         {{state}}
-        <hr />
+        
         <el-form :inline="false" class="demo-form-inline" style="width:300px;" label-width="30%">
             <el-form-item label="아이디">
             <el-input v-model="state.userid" @keyup="handleIdCheck"></el-input>
