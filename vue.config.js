@@ -6,13 +6,20 @@ module.exports = {
             // socket.io, websocket => 문자나 파일을 통신
             // webrtc => 실시간 화상채팅
             
-            '/socket' : {  
+            '/socket' : { // socket용, 실시간
                 target:'http://localhost:3001',
                 ws:true,
                 changeOrigin :true,
                 logLevel : 'debug'
             },
-            '/member' : { // rest용
+
+            '/member' : { // rest용, 데이터를 호출하면 처리해주는
+                target:'http://localhost:3000',
+                changeOrigin :true,
+                logLevel : 'debug'
+            },
+
+            '/item' : { // rest용
                 target:'http://localhost:3000',
                 changeOrigin :true,
                 logLevel : 'debug'
