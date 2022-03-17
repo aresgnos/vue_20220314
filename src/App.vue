@@ -1,6 +1,5 @@
 <template>
   <div>
-    {{state}}
     <el-menu
     class="el-menu-demo"
     mode="horizontal"
